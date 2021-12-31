@@ -1,28 +1,64 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <h1>Todo List</h1>
+    <div id="app">
+      <div>
+        <TodoNew />
+        <TodoList />
+        <Pagination />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TodoNew from "@/components/TodoNew.vue";
+import TodoList from "@/components/TodoList.vue";
+import Pagination from "@/components/Pagination.vue";
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    TodoNew,
+    TodoList,
+    Pagination
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+html {
+  font-family: "Open Sans", sans-serif;
+  /* height: 100%; */
+  color: #333;
+
+}
+
+body {
+  display: flex;
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  width: max(50%, 34em);
+  margin: auto;
+  margin-top: 2em;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+
+h1 {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0;
+}
+
+.vue-logo {
+  display: block;
+  width: 50px;
+  margin: 0 auto;
 }
 </style>
